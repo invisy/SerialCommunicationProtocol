@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latestmajor</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Simple serial communication protocol for embedded devices.</Description>
+        <RepositoryUrl>https://github.com/invisy/SerialCommunicationProtocol.git</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+        <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+    </ItemGroup>
+
+</Project>

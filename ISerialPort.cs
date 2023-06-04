@@ -15,4 +15,6 @@ public interface ISerialPort : IDisposable
     void Open();
     int Read(byte[] buffer, int offset, int count);
     void Write(byte[] buffer, int offset, int count);
+    public void DiscardInBuffer();
+    public void DiscardOutBuffer();
 }

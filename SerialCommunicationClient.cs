@@ -126,6 +126,9 @@ public class SerialCommunicationClient : ISerialCommunicationClient
 
     private void SendPacket(ushort command, byte[] parameters)
     {
+        _serialPort.DiscardInBuffer();
+        _serialPort.DiscardOutBuffer();
+
         if (parameters is null)
             throw new ArgumentNullException(nameof(parameters));
 
@@ -144,8 +147,8 @@ public class SerialCommunicationClient : ISerialCommunicationClient
         packet[2] = (byte)dataLength;
         Array.Copy(parameters, 0, packet, 3, parameters.Length);
         var crc = _crc16Calculator.Calculate(packet, 0, 3 + dataLength);
-        packet[^2] = (byte)(crc & 0xff);
-        packet[^1] = (byte)((crc >> 8) & 0xff);
+        packet[packet.Length-2] = (byte)(crc & 0xff);
+        packet[packet.Length-1] = (byte)((crc >> 8) & 0xff);
 
         _serialPort.Write(packet, 0, packet.Length);
         while (_serialPort.BytesToWrite > 0)

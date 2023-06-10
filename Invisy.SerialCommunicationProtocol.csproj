@@ -8,8 +8,8 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>Simple serial communication protocol for embedded devices.</Description>
         <RepositoryUrl>https://github.com/invisy/SerialCommunicationProtocol.git</RepositoryUrl>
-        <Version>1.0.1</Version>
-        <PackageReleaseNotes>Switched to netstandart 2.0</PackageReleaseNotes>
+        <Version>1.0.2</Version>
+        <PackageReleaseNotes>Fixed protocol errors</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
